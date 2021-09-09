@@ -1,7 +1,7 @@
 <div class="col s12 l6">
     <div class="card">
         <div class="card-image">
-            <img src="{{ asset('storage/'.$post->image) }}" alt="">
+            <img src="{{ asset('storage/'.$post->image) }}" alt=""  style="width:100%; height:300px;">
             @if ($post->user->id == auth()->user()->id || auth()->user()->role == 1)
                 <form action="{{ route('post.delete', $post) }}" method="post">
                     @csrf

@@ -59,8 +59,6 @@ class PostController extends Controller
 
     public function edit(Post $post){
 
-        dd(storage_public());
-
         $this->authorize('update-post', $post);
 
         $categories = $this->categoryService->index();
