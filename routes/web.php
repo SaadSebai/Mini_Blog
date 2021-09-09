@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/home/filter', [HomeController::class, 'search'])->name('post.filter');
@@ -33,6 +33,7 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::post('/login', [UserController::class, 'login']);
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::get('/post/user/{user}', [PostController::class, 'userPosts'])->name('post.user');
 Route::get('/post/add', [PostController::class, 'add'])->name('post.add');
